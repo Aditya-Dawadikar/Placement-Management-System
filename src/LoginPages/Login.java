@@ -35,6 +35,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(215, 193, 195));
+        setUndecorated(true);
 
         admin.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         admin.setText("ADMIN LOGIN");
@@ -101,10 +102,11 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentActionPerformed
-                                  //to close current window 
+       dispose();                           //to close current window 
        StudentLogin s = new StudentLogin();
        
     }//GEN-LAST:event_studentActionPerformed
@@ -115,13 +117,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelActionPerformed
 
     private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
-                                     //to close current window 
+        dispose();                             //to close current window 
         new AdminLogin().setVisible(true);     //creating new object of admin 
                                                 //window & display it to screen 
     }//GEN-LAST:event_adminActionPerformed
 
     private void companyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_companyActionPerformed
-                                     //to close current window 
+        dispose();                             //to close current window 
         new CompanyLogin().setVisible(true); 
     }//GEN-LAST:event_companyActionPerformed
 

@@ -1,8 +1,14 @@
 package Dashboard;
 
+import AdminPages.AddJob;
 import AdminPages.*;
+import AdminPages.DisplayPages.Companies.CompanyInfo;
+import AdminPages.DisplayPages.Jobs.JobInfo;
 import RegisterPages.*;
 import java.awt.BorderLayout;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Box;
 
 /*
@@ -22,6 +28,7 @@ public class AdminDashboard extends javax.swing.JFrame {
      */
     public AdminDashboard() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -180,6 +187,11 @@ public class AdminDashboard extends javax.swing.JFrame {
         jMenuBar1.add(homemenu);
 
         compmenu.setText("      COMPANIES       ");
+        compmenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                compmenuMouseClicked(evt);
+            }
+        });
         compmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 compmenuActionPerformed(evt);
@@ -188,6 +200,11 @@ public class AdminDashboard extends javax.swing.JFrame {
         jMenuBar1.add(compmenu);
 
         jobsmenu.setText("       ALL JOBS      ");
+        jobsmenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jobsmenuMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jobsmenu);
 
         addnew.setText("      ADD NEW            ");
@@ -294,6 +311,30 @@ public class AdminDashboard extends javax.swing.JFrame {
     private void compmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compmenuActionPerformed
        
     }//GEN-LAST:event_compmenuActionPerformed
+
+    private void compmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compmenuMouseClicked
+        // TODO add your handling code here:
+         try {
+            CompanyInfo ci= new CompanyInfo();
+            ci.print();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AdminDashboard.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminDashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_compmenuMouseClicked
+
+    private void jobsmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jobsmenuMouseClicked
+        try {
+            // TODO add your handling code here:
+            JobInfo ji = new JobInfo();
+            ji.print();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AdminDashboard.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminDashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jobsmenuMouseClicked
 
     /**
      * @param args the command line arguments

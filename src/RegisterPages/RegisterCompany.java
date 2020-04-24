@@ -1,11 +1,13 @@
 package RegisterPages;
 
+import Dashboard.CompanyDashBoard;
 import DataBaseConnectivity.CompanyDataBase.CompanyInfo;
 import DataBaseConnectivity.CompanyDataBase.CompanyLoginInfo;
 import DataBaseConnectivity.CompanyDataBase.CompanyAddressInfo;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class RegisterCompany extends javax.swing.JFrame {
     
@@ -51,8 +53,10 @@ public class RegisterCompany extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         buttoncancel = new javax.swing.JButton();
+        statuslabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(885, 940));
 
         buttonregister.setBackground(new java.awt.Color(171, 150, 240));
@@ -64,8 +68,8 @@ public class RegisterCompany extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(173, 174, 175));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Company Details"));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Company Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(0, 0, 102))); // NOI18N
 
         labelcompanyname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelcompanyname.setText("COMPANY NAME");
@@ -225,8 +229,9 @@ public class RegisterCompany extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        jPanel4.setBackground(new java.awt.Color(173, 174, 175));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Login Details"));
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(0, 51, 102))); // NOI18N
+        jPanel4.setForeground(new java.awt.Color(0, 0, 51));
         jPanel4.setPreferredSize(new java.awt.Dimension(821, 130));
 
         labelusername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -261,7 +266,7 @@ public class RegisterCompany extends javax.swing.JFrame {
                     .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                     .addComponent(labelusername)
                     .addComponent(password))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelconfirmpassword)
                     .addComponent(confpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -315,6 +320,8 @@ public class RegisterCompany extends javax.swing.JFrame {
             }
         });
 
+        statuslabel.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -322,8 +329,10 @@ public class RegisterCompany extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(382, 382, 382)
-                        .addComponent(buttonregister))
+                        .addGap(385, 385, 385)
+                        .addComponent(buttonregister)
+                        .addGap(63, 63, 63)
+                        .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(123, 123, 123)
@@ -333,8 +342,8 @@ public class RegisterCompany extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(31, 31, 31)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 802, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 803, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -345,15 +354,18 @@ public class RegisterCompany extends javax.swing.JFrame {
                     .addComponent(buttoncancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(buttonregister)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonregister))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
@@ -396,7 +408,9 @@ public class RegisterCompany extends javax.swing.JFrame {
             p.insert(name,swebsite,semail,sphone,sdesc);
             a.insert(name,scountry,sstate,scity,saddress);
             print();
+            JOptionPane.showMessageDialog(null,"ACCOUNT REGISTERED");  
             dispose();
+            new CompanyDashBoard();
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(RegisterStudent.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -469,6 +483,7 @@ public class RegisterCompany extends javax.swing.JFrame {
     private javax.swing.JLabel labelwebsite;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField state;
+    private javax.swing.JLabel statuslabel;
     private javax.swing.JTextField username;
     private javax.swing.JTextField website;
     // End of variables declaration//GEN-END:variables

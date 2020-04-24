@@ -5,6 +5,12 @@
  */
 package AdminPages;
 
+import DataBaseConnectivity.CollegeDataBase.CollegeAddressInfo;
+import DataBaseConnectivity.CollegeDataBase.CollegeInfo;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Lenovo
@@ -16,8 +22,10 @@ public class CollegeForm extends javax.swing.JFrame {
      */
     public CollegeForm() {
         initComponents();
+        setVisible(true);
     }
 
+    String name,email,phone,desc,city,state,country,address;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,16 +47,16 @@ public class CollegeForm extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        username1 = new javax.swing.JTextField();
-        username7 = new javax.swing.JTextField();
-        username9 = new javax.swing.JTextField();
-        username10 = new javax.swing.JTextField();
-        username11 = new javax.swing.JTextField();
-        username13 = new javax.swing.JTextField();
+        ccountry = new javax.swing.JTextField();
+        cname = new javax.swing.JTextField();
+        cstate = new javax.swing.JTextField();
+        cemail = new javax.swing.JTextField();
+        cphone = new javax.swing.JTextField();
+        ccity = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        caddress = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        cdescription = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -132,64 +140,64 @@ public class CollegeForm extends javax.swing.JFrame {
         jPanel2.add(jLabel10);
         jLabel10.setBounds(500, 29, 103, 29);
 
-        username1.addActionListener(new java.awt.event.ActionListener() {
+        ccountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                username1ActionPerformed(evt);
+                ccountryActionPerformed(evt);
             }
         });
-        jPanel2.add(username1);
-        username1.setBounds(132, 304, 199, 29);
+        jPanel2.add(ccountry);
+        ccountry.setBounds(132, 304, 199, 29);
 
-        username7.addActionListener(new java.awt.event.ActionListener() {
+        cname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                username7ActionPerformed(evt);
+                cnameActionPerformed(evt);
             }
         });
-        jPanel2.add(username7);
-        username7.setBounds(127, 30, 197, 29);
+        jPanel2.add(cname);
+        cname.setBounds(127, 30, 197, 29);
 
-        username9.addActionListener(new java.awt.event.ActionListener() {
+        cstate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                username9ActionPerformed(evt);
+                cstateActionPerformed(evt);
             }
         });
-        jPanel2.add(username9);
-        username9.setBounds(608, 30, 199, 29);
+        jPanel2.add(cstate);
+        cstate.setBounds(608, 30, 199, 29);
 
-        username10.addActionListener(new java.awt.event.ActionListener() {
+        cemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                username10ActionPerformed(evt);
+                cemailActionPerformed(evt);
             }
         });
-        jPanel2.add(username10);
-        username10.setBounds(130, 93, 199, 29);
+        jPanel2.add(cemail);
+        cemail.setBounds(130, 93, 199, 29);
 
-        username11.addActionListener(new java.awt.event.ActionListener() {
+        cphone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                username11ActionPerformed(evt);
+                cphoneActionPerformed(evt);
             }
         });
-        jPanel2.add(username11);
-        username11.setBounds(132, 160, 199, 29);
+        jPanel2.add(cphone);
+        cphone.setBounds(132, 160, 199, 29);
 
-        username13.addActionListener(new java.awt.event.ActionListener() {
+        ccity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                username13ActionPerformed(evt);
+                ccityActionPerformed(evt);
             }
         });
-        jPanel2.add(username13);
-        username13.setBounds(132, 234, 199, 29);
+        jPanel2.add(ccity);
+        ccity.setBounds(132, 234, 199, 29);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        caddress.setColumns(20);
+        caddress.setRows(5);
+        jScrollPane1.setViewportView(caddress);
 
         jPanel2.add(jScrollPane1);
         jScrollPane1.setBounds(12, 415, 319, 96);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        cdescription.setColumns(20);
+        cdescription.setRows(5);
+        jScrollPane2.setViewportView(cdescription);
 
         jPanel2.add(jScrollPane2);
         jScrollPane2.setBounds(500, 126, 310, 110);
@@ -198,6 +206,11 @@ public class CollegeForm extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Save College ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton1);
         jButton1.setBounds(330, 620, 170, 30);
 
@@ -220,35 +233,74 @@ public class CollegeForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void username1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username1ActionPerformed
+    private void ccountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccountryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_username1ActionPerformed
+    }//GEN-LAST:event_ccountryActionPerformed
 
-    private void username7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username7ActionPerformed
+    private void cnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_username7ActionPerformed
+    }//GEN-LAST:event_cnameActionPerformed
 
-    private void username9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username9ActionPerformed
+    private void cstateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cstateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_username9ActionPerformed
+    }//GEN-LAST:event_cstateActionPerformed
 
-    private void username10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username10ActionPerformed
+    private void cemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cemailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_username10ActionPerformed
+    }//GEN-LAST:event_cemailActionPerformed
 
-    private void username11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username11ActionPerformed
+    private void cphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cphoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_username11ActionPerformed
+    }//GEN-LAST:event_cphoneActionPerformed
 
-    private void username13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username13ActionPerformed
+    private void ccityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_username13ActionPerformed
+    }//GEN-LAST:event_ccityActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        get();
+        print();
+        
+        try {
+            CollegeInfo i= new CollegeInfo();
+            CollegeAddressInfo a= new CollegeAddressInfo();
+            
+            i.insert(name,email,phone,desc);
+            a.insert(name,country,state,city,address);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(CollegeForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    void get(){
+        name=cname.getText();
+        email=cemail.getText();
+        country=ccountry.getText();
+        state=cstate.getText();
+        city=ccity.getText();
+        address=caddress.getText();
+        phone=cphone.getText();
+        desc=cdescription.getText();
+    }
+    
+    void print(){
+        System.out.println("name:"+name);
+        System.out.println("email:"+email);
+        System.out.println("country:"+country);
+        System.out.println("state:"+state);
+        System.out.println("city:"+city);
+        System.out.println("address:"+address);
+        System.out.println("phone:"+phone);
+        System.out.println("desc:"+desc);
+    }
     /**
      * @param args the command line arguments
      */
@@ -285,7 +337,15 @@ public class CollegeForm extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea caddress;
     private javax.swing.JButton cancel;
+    private javax.swing.JTextField ccity;
+    private javax.swing.JTextField ccountry;
+    private javax.swing.JTextArea cdescription;
+    private javax.swing.JTextField cemail;
+    private javax.swing.JTextField cname;
+    private javax.swing.JTextField cphone;
+    private javax.swing.JTextField cstate;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -300,13 +360,5 @@ public class CollegeForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField username1;
-    private javax.swing.JTextField username10;
-    private javax.swing.JTextField username11;
-    private javax.swing.JTextField username13;
-    private javax.swing.JTextField username7;
-    private javax.swing.JTextField username9;
     // End of variables declaration//GEN-END:variables
 }

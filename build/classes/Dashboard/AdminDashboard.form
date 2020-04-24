@@ -29,6 +29,7 @@
             <Property name="text" type="java.lang.String" value="      COMPANIES       "/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="compmenuMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="compmenuActionPerformed"/>
           </Events>
         </Menu>
@@ -36,6 +37,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="       ALL JOBS      "/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jobsmenuMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="addnew">
           <Properties>

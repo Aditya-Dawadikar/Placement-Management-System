@@ -1,11 +1,13 @@
 package RegisterPages;
 
+import Dashboard.StudentDashBoard;
 import DataBaseConnectivity.StudentDataBase.StudentAddressInfo;
 import DataBaseConnectivity.StudentDataBase.StudentLoginInfo;
 import DataBaseConnectivity.StudentDataBase.StudentPersonalInfo;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class RegisterStudent extends javax.swing.JFrame {
 
@@ -377,6 +379,7 @@ public class RegisterStudent extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
@@ -411,7 +414,9 @@ public class RegisterStudent extends javax.swing.JFrame {
             p.insert(name,semail,sphone,dob);
             a.insert(name,scountry,sstate,scity,saddress);
             print();
+            JOptionPane.showMessageDialog(null,"ACCOUNT REGISTERED");   
             dispose();
+            new StudentDashBoard();
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(RegisterStudent.class.getName()).log(Level.SEVERE, null, ex);
         }
