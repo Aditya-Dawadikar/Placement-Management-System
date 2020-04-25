@@ -47,7 +47,6 @@ public class CompanyDashBoard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        cancel = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -87,15 +86,6 @@ public class CompanyDashBoard extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dashboard/po.jpeg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 580, 600));
 
-        cancel.setBackground(new java.awt.Color(255, 0, 0));
-        cancel.setText("X");
-        cancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 0, 50, 50));
-
         jMenuBar1.setMinimumSize(new java.awt.Dimension(66, 60));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(66, 60));
 
@@ -129,7 +119,12 @@ public class CompanyDashBoard extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setText("         LOGOUT");
+        jMenu5.setText("         LOGOUT       ");
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -146,11 +141,6 @@ public class CompanyDashBoard extends javax.swing.JFrame {
     private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
         new AddJob().setVisible(true);
     }//GEN-LAST:event_jMenu6MouseClicked
-
-    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_cancelActionPerformed
 
     private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
         // TODO add your handling code here:
@@ -171,6 +161,11 @@ public class CompanyDashBoard extends javax.swing.JFrame {
        rc.fetchdetails();
        rc.setVisible(true);
     }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+        dispose();
+        
+    }//GEN-LAST:event_jMenu5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -208,7 +203,6 @@ public class CompanyDashBoard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cancel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

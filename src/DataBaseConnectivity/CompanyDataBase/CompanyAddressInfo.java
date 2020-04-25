@@ -38,8 +38,8 @@ static final String JDBC_driver="oracle.jdbc.driver.OracleDriver";
         stmt.execute("commit");
     }
     
-    public void update(String name,String country,String state,String city,String address) throws SQLException,ClassNotFoundException{
-        stmt.executeQuery("update  country,state,city,address from company_address_info where name='"+name+"'");
+    public void update(String sname,String scountry,String sstate,String scity,String saddress) throws SQLException,ClassNotFoundException{
+        stmt.executeQuery("update company_address_info set country='"+scountry+"',state='"+sstate+"',city='"+scity+"',address='"+saddress+"' where name='"+sname+"'");
         stmt.execute("commit");
     }
 
