@@ -7,6 +7,8 @@ package Dashboard;
 
 import AdminPages.AddJob;
 import AdminPages.DisplayPages.Students.StudentInfo;
+import RegisterPages.RegisterCompany;
+import RegisterPages.RegisterStudent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +22,14 @@ public class CompanyDashBoard extends javax.swing.JFrame {
     /**
      * Creates new form CompanyDashBoard
      */
+    
+    String user;
     public CompanyDashBoard() {
+        initComponents();
+    }
+
+    public CompanyDashBoard(String user) {
+        this.user=user;
         initComponents();
     }
 
@@ -113,6 +122,11 @@ public class CompanyDashBoard extends javax.swing.JFrame {
         jMenuBar1.add(jMenu6);
 
         jMenu4.setText("             MY ACCOUNT         ");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("         LOGOUT");
@@ -151,6 +165,12 @@ public class CompanyDashBoard extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+       RegisterCompany rc=new RegisterCompany(user);
+       rc.fetchdetails();
+       rc.setVisible(true);
+    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments

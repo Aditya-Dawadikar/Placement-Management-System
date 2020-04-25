@@ -15,11 +15,19 @@ public class RegisterStudent extends javax.swing.JFrame {
      * Creates new form AdminLogin
      */
         String name,user,pass,confpass,semail,scountry,sstate,scity,sphone,day,month,year,dob,saddress;
-
-    
+        String accuser;
+        String[] result=new String[2];
+        String[] logindetails=new String[3];
+        String[] addressdet=new String[3];
     public RegisterStudent() {
         initComponents();
-        setVisible(true);
+        //setVisible(true);
+    }
+
+    public RegisterStudent(String user) {
+       accuser=user;
+       initComponents();
+       
     }
 
     /**
@@ -64,11 +72,12 @@ public class RegisterStudent extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         cancel = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(213, 194, 192));
 
-        buttonregister.setText("Register");
+        buttonregister.setText("REGISTER");
         buttonregister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonregisterActionPerformed(evt);
@@ -332,31 +341,38 @@ public class RegisterStudent extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("UPDATE PROFILE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(426, 426, 426)
-                .addComponent(buttonregister)
-                .addGap(0, 435, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
+                        .addGap(139, 139, 139)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 1, Short.MAX_VALUE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 859, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 859, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(46, 46, 46))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(355, 355, 355)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(buttonregister, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,7 +390,9 @@ public class RegisterStudent extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(buttonregister)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonregister)
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
 
@@ -416,7 +434,7 @@ public class RegisterStudent extends javax.swing.JFrame {
             print();
             JOptionPane.showMessageDialog(null,"ACCOUNT REGISTERED");   
             dispose();
-            new StudentDashBoard();
+            //new StudentDashBoard();
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(RegisterStudent.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -427,8 +445,52 @@ public class RegisterStudent extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
-                                                 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // TODO add your handling code here:
+            get();
+            StudentPersonalInfo p=new StudentPersonalInfo();
+            StudentAddressInfo a= new StudentAddressInfo();
+            StudentLoginInfo l= new StudentLoginInfo();
+            l.update(name,user,pass);
+            p.update(name,semail,sphone,dob);
+            a.update(name,scountry,sstate,scity,saddress);
+            print();
+            JOptionPane.showMessageDialog(null,"ACCOUNT UPDATED SUCCESSFULLY");   
+            dispose();
+            //new StudentDashBoard();
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null,"NOT UPDATED");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+                                                 
+    public void fetchdetails()
+    {
+        try {
+                StudentLoginInfo l= new StudentLoginInfo();            
+                result=l.fetchpass(accuser);                   //passing studusername to fetch method to recieve login info and store it in array result
+                PasswordField.setText(result[0]); 
+                username.setText(accuser);
+                ConfPasswordField.setText(result[0]);
+                studname.setText(result[1]);
+                
+                StudentPersonalInfo p=new StudentPersonalInfo();
+                logindetails=p.fetch(result[1]);              //passing studentname from result array to fetch method to get personal info of student
+                mobilefield.setText(logindetails[1]);
+                email.setText(logindetails[0]);
+                
+                StudentAddressInfo a= new StudentAddressInfo();
+                addressdet=a.fetch(result[1]);                //passing studentname from result array to fetch method to get address info of student
+                country.setText(addressdet[0]);
+                state.setText(addressdet[1]);
+                city.setText(addressdet[2]);
+                address.setText(addressdet[3]);
+                
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(RegisterStudent.class.getName()).log(Level.SEVERE, null, ex);
+            } 
+    }
     void get(){
         name=studname.getText();
         user=username.getText();
@@ -514,6 +576,7 @@ public class RegisterStudent extends javax.swing.JFrame {
     private javax.swing.JTextField country;
     private javax.swing.JComboBox<String> datebox;
     private javax.swing.JTextField email;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

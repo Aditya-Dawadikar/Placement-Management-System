@@ -7,6 +7,8 @@ package DataBaseConnectivity.CompanyDataBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -17,15 +19,17 @@ import java.sql.Statement;
 public class CompanyInfo {
     static final String JDBC_driver="oracle.jdbc.driver.OracleDriver";
     static final String DB_URL="jdbc:oracle:thin:@localhost:1521:XE";
-    static final String user="chandler";
-    static final String pass="chandler";
+    static final String user="gaurav";
+    static final String pass="gaurav";
     
     Connection con;
     Statement stmt;
+    PreparedStatement pstmtt;
+    ResultSet rs=null;
     
     public CompanyInfo() throws ClassNotFoundException, SQLException{
         Class.forName(JDBC_driver);
-        con=null;stmt=null;
+        con=null;stmt=null;pstmtt=null;
         con=DriverManager.getConnection(DB_URL,user,pass);
         stmt=con.createStatement();
     }
@@ -39,11 +43,24 @@ public class CompanyInfo {
         stmt.execute("commit");
     }
 
-    public void fetch() {
+    public String[] fetch(String compname) {
+        String[] result = new String[4];
+        //String addpass=null;
+        String sql="select * from company_info where name='"+compname+"'";
          try{
-        stmt.executeQuery("select * from company_info");
+        pstmtt=con.prepareStatement(sql);
+        rs=pstmtt.executeQuery();
+        if(rs.next())
+        {
+        result[0]=rs.getString("website");
+        result[1]=rs.getString("email");
+        result[2]=rs.getString("phone");
+        result[3]=rs.getString("description");
+        }
+        //return add1;
         }catch(SQLException e){
             System.out.println("record not found");
         }
+         return result;
     }
 }

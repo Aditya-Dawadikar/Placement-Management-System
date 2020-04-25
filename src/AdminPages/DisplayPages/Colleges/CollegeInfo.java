@@ -18,8 +18,8 @@ import java.sql.Statement;
 public class CollegeInfo {
     static final String JDBC_driver="oracle.jdbc.driver.OracleDriver";
 	static final String DB_URL="jdbc:oracle:thin:@localhost:1521:XE";
-	static final String user="chandler";
-	static final String pass="chandler";
+	static final String user="gaurav";
+	static final String pass="gaurav";
 	
 	
 	static Connection con;
