@@ -140,14 +140,12 @@ public class CompanyLogin extends javax.swing.JFrame {
             
             if(flag==1){
                 System.out.println("Login successful");
-                new CompanyDashBoard().setVisible(true);
+                new CompanyDashBoard(user).setVisible(true);
                 dispose();
             }else{
                 statuslabel.setText("LOGIN FAILED");
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(CompanyLogin.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(CompanyLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
         

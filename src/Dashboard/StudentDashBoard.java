@@ -7,6 +7,7 @@ package Dashboard;
 
 import AdminPages.DisplayPages.Jobs.JobInfo;
 import AdminPages.DisplayPages.Companies.CompanyInfo;
+import RegisterPages.RegisterStudent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +21,13 @@ public class StudentDashBoard extends javax.swing.JFrame {
     /**
      * Creates new form StudentDashBoard
      */
+    String user;
     public StudentDashBoard() {
+        initComponents();
+    }
+
+    public StudentDashBoard(String user) {
+        this.user=user;
         initComponents();
     }
 
@@ -100,6 +107,11 @@ public class StudentDashBoard extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("    MY ACCOUNT                ");
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("LOGOUT            ");
@@ -157,6 +169,12 @@ public class StudentDashBoard extends javax.swing.JFrame {
             Logger.getLogger(StudentDashBoard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+       RegisterStudent rs=new RegisterStudent(user);
+       rs.fetchdetails();                           //calling fetchdetails to display students info 
+       rs.setVisible(true);
+    }//GEN-LAST:event_jMenu5MouseClicked
 
     /**
      * @param args the command line arguments

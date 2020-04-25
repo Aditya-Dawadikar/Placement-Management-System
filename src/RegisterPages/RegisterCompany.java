@@ -12,8 +12,17 @@ import javax.swing.JOptionPane;
 public class RegisterCompany extends javax.swing.JFrame {
     
     String name,user,pass,confpass,semail,swebsite,scountry,sstate,scity,sphone,day,month,year,saddress,sdesc;
-
+    String accuser;
+    String[] result=new String[2];
+    String[] info=new String[3];
+    String[] addressdet=new String[4];
     public RegisterCompany() {
+        initComponents();
+        setVisible(true);
+    }
+
+    public RegisterCompany(String user) {
+        accuser=user;
         initComponents();
         setVisible(true);
     }
@@ -421,7 +430,34 @@ public class RegisterCompany extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_buttoncancelActionPerformed
                                            
-
+    public void fetchdetails()
+    {
+        try {
+                CompanyLoginInfo l= new CompanyLoginInfo();
+                result=l.fetch(accuser);
+                password.setText(result[0]); 
+                username.setText(accuser);
+                confpassword.setText(result[0]);
+                companyname.setText(result[1]);
+                
+                CompanyInfo p=new CompanyInfo();
+                info=p.fetch(result[1]);          //calling fetch method by passing comp name
+                website.setText(info[0]);
+                email.setText(info[1]);
+                compmobno.setText(info[2]);
+                description.setText(info[3]);
+                
+                CompanyAddressInfo a= new CompanyAddressInfo();
+                addressdet=a.fetch(result[1]);
+                country.setText(addressdet[0]);
+                state.setText(addressdet[1]);
+                city.setText(addressdet[2]);
+                address.setText(addressdet[3]);
+                
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(RegisterStudent.class.getName()).log(Level.SEVERE, null, ex);
+            } 
+    }
     
     void get(){
         name=companyname.getText();

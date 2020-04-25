@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class StudentLogin extends javax.swing.JFrame {
-
+   String user,pass;
     public StudentLogin() {
         initComponents();
         setVisible(true);
@@ -158,8 +158,8 @@ public class StudentLogin extends javax.swing.JFrame {
 
     private void buttonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonloginActionPerformed
         // TODO add your handling code here:
-        String user=username.getText();
-        String pass=password.getText();
+        user=username.getText();
+        pass=password.getText();
         StudentLoginInfo log;
         try {
             log = new StudentLoginInfo();
@@ -167,7 +167,7 @@ public class StudentLogin extends javax.swing.JFrame {
             if(flag==1){
                 System.out.println("Login Successful");
                 dispose();
-                new StudentDashBoard().setVisible(true);
+                new StudentDashBoard(user).setVisible(true);
                 //dispose();
                 
             }else{
