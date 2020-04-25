@@ -38,8 +38,8 @@ public class CompanyInfo {
         stmt.execute("commit");
     }
     
-    public void update(String name,String website,String email,String phone,String desc) throws SQLException,ClassNotFoundException{
-        stmt.executeQuery("update website,email,phone,description from Company_info where name='"+name+"'");
+    public void update(String sname,String swebsite,String semail,String sphone,String desc) throws SQLException,ClassNotFoundException{
+        stmt.executeQuery("update company_info set website='"+swebsite+"', email='"+semail+"',phone='"+sphone+"',description='"+desc+"' where name='"+sname+"' ");
         stmt.execute("commit");
     }
 

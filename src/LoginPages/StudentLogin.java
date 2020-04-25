@@ -166,9 +166,9 @@ public class StudentLogin extends javax.swing.JFrame {
             int flag=log.loginAttempt(user, pass);
             if(flag==1){
                 System.out.println("Login Successful");
-                dispose();
+                
                 new StudentDashBoard(user).setVisible(true);
-                //dispose();
+                dispose();
                 
             }else{
                 statuslabel.setText("LOGIN FAILED");

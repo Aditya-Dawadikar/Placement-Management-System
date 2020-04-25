@@ -40,8 +40,8 @@ public class CompanyLoginInfo {
         stmt.execute("commit");
     }
     
-    public void update(String name,String username,String password) throws SQLException,ClassNotFoundException{
-        stmt.executeQuery("update  username,password from Company_login_info where name='"+name+"'");
+    public void update(String sname,String susername,String spassword) throws SQLException,ClassNotFoundException{
+        stmt.executeQuery("update company_login_info set username='"+susername+"', password='"+spassword+"' where name='"+sname+"' ");
         stmt.execute("commit");
     }
 

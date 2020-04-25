@@ -76,6 +76,7 @@ public class RegisterStudent extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(213, 194, 192));
+        setUndecorated(true);
 
         buttonregister.setText("REGISTER");
         buttonregister.addActionListener(new java.awt.event.ActionListener() {
