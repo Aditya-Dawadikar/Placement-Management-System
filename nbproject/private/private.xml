@@ -2,6 +2,22 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/DataBaseConnectivity/StudentDataBase/StudentLoginInfo.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/RegisterPages/RegisterStudent.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/DataBaseConnectivity/StudentDataBase/StudentPersonalInfo.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/DataBaseConnectivity/CompanyDataBase/CompanyLoginInfo.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/RegisterPages/RegisterCompany.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/DataBaseConnectivity/StudentDataBase/StudentAddressInfo.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/Dashboard/StudentDashBoard.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/Dashboard/AdminDashboard.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/DataBaseConnectivity/CompanyDataBase/CompanyInfo.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/Dashboard/CompanyDashBoard.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/CampusRecruitmentSystem/src/DataBaseConnectivity/CompanyDataBase/CompanyAddressInfo.java</file>
+        </group>
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
     </open-files>
 </project-private>

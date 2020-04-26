@@ -63,6 +63,10 @@ public class RegisterCompany extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         buttoncancel = new javax.swing.JButton();
         statuslabel = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -331,6 +335,17 @@ public class RegisterCompany extends javax.swing.JFrame {
 
         statuslabel.setForeground(new java.awt.Color(255, 0, 0));
 
+<<<<<<< HEAD
+=======
+        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jButton1.setText("UPDATE PROFILE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -339,9 +354,20 @@ public class RegisterCompany extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
+<<<<<<< HEAD
                         .addComponent(buttonregister)
                         .addGap(132, 132, 132)
                         .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                        .addComponent(jButton1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(162, 162, 162)
+                                .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buttonregister))))
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(123, 123, 123)
@@ -368,9 +394,20 @@ public class RegisterCompany extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                     .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonregister))
                 .addContainerGap(24, Short.MAX_VALUE))
+=======
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(statuslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(26, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(buttonregister)))))
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
         );
 
         pack();
@@ -429,6 +466,28 @@ public class RegisterCompany extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_buttoncancelActionPerformed
+<<<<<<< HEAD
+=======
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       try {
+            // TODO add your handling code here:
+            get();
+            CompanyInfo ci=new CompanyInfo();
+            CompanyAddressInfo ca= new CompanyAddressInfo();
+            CompanyLoginInfo cl= new CompanyLoginInfo();
+            cl.update(name,user,pass);
+            ci.update(name,swebsite,semail,sphone,sdesc);
+            ca.update(name,scountry,sstate,scity,saddress);
+            print();
+            JOptionPane.showMessageDialog(null,"ACCOUNT UPDATED SUCCESSFULLY");  
+            dispose();
+           // new CompanyDashBoard();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(RegisterStudent.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
                                            
     public void fetchdetails()
     {
@@ -502,6 +561,10 @@ public class RegisterCompany extends javax.swing.JFrame {
     private javax.swing.JTextField country;
     private javax.swing.JTextField description;
     private javax.swing.JTextField email;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton jButton1;
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

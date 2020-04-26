@@ -3,7 +3,10 @@ package AdminPages.DisplayPages.Colleges;
 import static AdminPages.DisplayPages.Colleges.CollegeInfo.stmt;
 import java.awt.BorderLayout;
 import java.awt.Color;
+<<<<<<< HEAD
 import java.awt.Component;
+=======
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;

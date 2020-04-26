@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 package DataBaseConnectivity.StudentDataBase;
 
 import java.sql.Connection;
@@ -8,10 +12,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class StudentAddressInfo {
+<<<<<<< HEAD
     static final String JDBC_DRIVER="oracle.jdbc.driver.OracleDriver";
     static final String DB_URL="jdbc:oracle:thin:@localhost:1521:XE";
     static final String user="chandler";
     static final String pass="chandler";
+=======
+    static final String JDBC_driver="oracle.jdbc.driver.OracleDriver";
+    static final String DB_URL="jdbc:oracle:thin:@localhost:1521:XE";
+    static final String user="gaurav";
+    static final String pass="gaurav";
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
     
     Connection con;
     Statement stmt;
@@ -19,7 +30,11 @@ public class StudentAddressInfo {
     ResultSet rs=null;
     
     public StudentAddressInfo() throws ClassNotFoundException, SQLException{
+<<<<<<< HEAD
         Class.forName(JDBC_DRIVER);
+=======
+        Class.forName(JDBC_driver);
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
         con=null;stmt=null;pstmtt=null;
         con=DriverManager.getConnection(DB_URL,user,pass);
         stmt=con.createStatement();

@@ -2,8 +2,11 @@ package AdminPages.DisplayPages.Jobs;
 import static AdminPages.DisplayPages.Jobs.JobInfo.stmt;
 import java.awt.BorderLayout;
 import java.awt.Color;
+<<<<<<< HEAD
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+=======
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -16,7 +19,16 @@ public class JobLabelCreator extends JFrame {
 
     static JobLabelCreator jf;
     JPanel jp;
+<<<<<<< HEAD
         
+=======
+    
+    /*
+    public static void main( String args[]) throws ClassNotFoundException{
+        LabelCreator.create();
+    }*/    
+    
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
     private void prepareUI() throws ClassNotFoundException{
         jp = new JPanel();
         jp.setLayout(null);
@@ -48,14 +60,18 @@ public class JobLabelCreator extends JFrame {
                     System.out.println(rs.getString(1));
                     String s= new String("company: "+rs.getString(1)+"Skills: "+rs.getString(6));
                     JLabel l= new JLabel();
+<<<<<<< HEAD
                     JButton btn= new JButton();
                     JPanel panel = new JPanel();
                     btn.setText("apply");
                     
+=======
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
                     l.setText(s);
                     l.setSize(50,50);
                     l.setLocation(10,20);
                     l.setBorder(border);
+<<<<<<< HEAD
                     
                     btn.addActionListener(new ActionListener(){
                         @Override
@@ -69,6 +85,9 @@ public class JobLabelCreator extends JFrame {
                     panel.add(l);
                     panel.add(btn);
                     add(panel);
+=======
+                    add(l);
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(JobLabelCreator.class.getName()).log(Level.SEVERE, null, ex);

@@ -100,10 +100,13 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="                LOGOUT             "/>
           </Properties>
+<<<<<<< HEAD
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logoutMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutActionPerformed"/>
           </Events>
+=======
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
         </Menu>
       </SubComponents>
     </Menu>

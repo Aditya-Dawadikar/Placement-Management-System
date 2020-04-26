@@ -69,7 +69,10 @@ public class CompanyLabelCreator extends JFrame{
                     l.setLocation(10,20);
                     l.setBorder(border);
                     add(l);
+<<<<<<< HEAD
                     System.out.println("button created\n");
+=======
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(CompanyLabelCreator.class.getName()).log(Level.SEVERE, null, ex);

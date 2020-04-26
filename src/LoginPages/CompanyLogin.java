@@ -1,6 +1,10 @@
 package LoginPages;
 
 import Dashboard.CompanyDashBoard;
+<<<<<<< HEAD
+=======
+import Dashboard.StudentDashBoard;
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 import DataBaseConnectivity.CompanyDataBase.CompanyLoginInfo;
 import RegisterPages.RegisterCompany;
 import java.sql.SQLException;
@@ -16,7 +20,10 @@ public class CompanyLogin extends javax.swing.JFrame {
         setVisible(true);
     }
 
+<<<<<<< HEAD
     int flag=0;
+=======
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -136,7 +143,11 @@ public class CompanyLogin extends javax.swing.JFrame {
         
         try {
             CompanyLoginInfo log= new CompanyLoginInfo();
+<<<<<<< HEAD
             flag= log.loginAttempt(user,pass);
+=======
+            int flag= log.loginAttempt(user,pass);
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
             
             if(flag==1){
                 System.out.println("Login successful");
@@ -161,11 +172,53 @@ public class CompanyLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_buttoncancelActionPerformed
+<<<<<<< HEAD
 /*
     public int getStatus(){
         return flag;
     }
 */
+=======
+
+    /*public  static void main(String args[]){
+        CompanyLogin c=new CompanyLogin();
+    }*/
+    /**
+     * @param args the command line arguments
+     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(CompanyLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(CompanyLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(CompanyLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(CompanyLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new CompanyLogin().setVisible(true);
+//            }
+//        });
+//    }
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttoncancel;

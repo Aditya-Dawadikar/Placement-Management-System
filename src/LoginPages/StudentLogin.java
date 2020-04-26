@@ -3,6 +3,10 @@ package LoginPages;
 import Dashboard.StudentDashBoard;
 import DataBaseConnectivity.StudentDataBase.StudentLoginInfo;
 import RegisterPages.RegisterStudent;
+<<<<<<< HEAD
+=======
+import java.sql.ResultSet;
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -189,12 +193,57 @@ public class StudentLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_buttoncancelActionPerformed
+<<<<<<< HEAD
 /*
     public int getStatus(){
         return flag;
     }
   */  
     
+=======
+
+    
+    
+    /*public static void main(String args[]){
+        StudentLogin sl=new StudentLogin();
+    }*/
+    /**
+     * @param args the command line arguments
+     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(StudentLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(StudentLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(StudentLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(StudentLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new StudentLogin().setVisible(true);
+//            }
+//        });
+//    }
+
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttoncancel;
     private javax.swing.JButton buttonlogin;

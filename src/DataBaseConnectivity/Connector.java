@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 package DataBaseConnectivity;
 
 import java.sql.Connection;
@@ -6,17 +14,33 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+<<<<<<< HEAD
 public class Connector {
     static final String JDBC_DRIVER="oracle.jdbc.driver.OracleDriver";
     static final String DB_URL="jdbc:oracle:thin:@localhost:1521:XE";
     static final String user="chandler";
     static final String pass="chandler";
+=======
+/**
+ *
+ * @author lenovo
+ */
+public class Connector {
+    static final String JDBC_driver="oracle.jdbc.driver.OracleDriver";
+    static final String DB_URL="jdbc:oracle:thin:@localhost:1521:XE";
+    static final String user="gaurav";
+    static final String pass="gaurav";
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
     
     Connection con;
     Statement stmt;
     
     Connector() throws ClassNotFoundException, SQLException{
+<<<<<<< HEAD
         Class.forName(JDBC_DRIVER);
+=======
+        Class.forName(JDBC_driver);
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
         con=null;stmt=null;
         con=DriverManager.getConnection(DB_URL,user,pass);
         stmt=con.createStatement();
@@ -37,7 +61,18 @@ public class Connector {
     void display(){
     
     }*/
+<<<<<<< HEAD
     
+=======
+    /*
+    
+    ***two ways to implement these function
+    ***1.Extend class Connector where ever required and override the functions
+    ***2.use object of class Connector and write different variations of the same functions
+    ***
+    ***I would prefer extending the class Connector  
+    */
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
     void insert() throws SQLException{
         stmt.execute("Insert into Student_login_info values('maheshwari','sia','sia')");
         stmt.execute("commit");
@@ -64,4 +99,12 @@ public class Connector {
     void display() throws SQLException{
         ResultSet rs=stmt.executeQuery("select * from tablename where ...");
     }
+<<<<<<< HEAD
+=======
+    
+    /*public static void main(String args[]) throws ClassNotFoundException, SQLException{
+        Connector c=new Connector();
+        c.insert();
+    }*/
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 }

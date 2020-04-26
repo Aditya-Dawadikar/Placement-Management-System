@@ -7,6 +7,11 @@ package AdminPages;
 
 import DataBaseConnectivity.CompanyDataBase.jobinfo;
 import java.sql.SQLException;
+<<<<<<< HEAD
+=======
+import java.util.logging.Level;
+import java.util.logging.Logger;
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 import javax.swing.JOptionPane;
 
 /**

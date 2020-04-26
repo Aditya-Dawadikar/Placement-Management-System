@@ -5,6 +5,11 @@
  */
 package AdminPages.DisplayPages.Students;
 
+<<<<<<< HEAD
+=======
+import AdminPages.DisplayPages.Colleges.CollegeInfo;
+import AdminPages.DisplayPages.Colleges.CollegeLabelCreator;
+>>>>>>> b1fc7aa3115213bfc693210ceeffd59cb9753d3b
 import static AdminPages.DisplayPages.Students.StudentInfo.stmt;
 import java.awt.BorderLayout;
 import java.awt.Color;
